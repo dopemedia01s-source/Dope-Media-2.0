@@ -254,3 +254,89 @@ section { scroll-margin-top:18px; }
   .hero-badge-4 { right:-52px; bottom:-15px; }
   .hero-badge-5 { left:-64px; bottom:45px; }
 }
+
+
+/* Compact mobile layout: reduce visual scale while preserving usable touch targets. */
+@media (max-width: 767px) {
+  .wrap { padding-left:12px; padding-right:12px; }
+  .header-inner { height:56px; }
+  .wordmark { gap:7px; font-size:17px; }
+  .brand-icon { width:23px; height:23px; flex-basis:23px; }
+  .menu-toggle { width:44px; height:44px; }
+  .mobile-nav:not([hidden]) { top:56px; padding:14px 12px; gap:4px; }
+  .hero-inner { gap:18px; padding-top:18px; padding-bottom:24px; }
+  .hero-copy { gap:12px; }
+  .hero-kicker { font-size:10px; }
+  .hero h1 { font-size:clamp(30px,8vw,38px); line-height:1.04; }
+  .hero-highlight { padding:5px 9px 8px; border-radius:12px; }
+  .hero p:not(.hero-kicker) { font-size:14px; line-height:1.45; }
+  .hero-actions { gap:8px; }
+  .hero-btn,.btn-ghost { min-height:44px; padding:0 12px; font-size:12px; gap:6px; }
+  .hero-visual { min-height:220px; }
+  .hero-logo-card { width:160px; height:160px; flex-basis:160px; border-radius:20px; }
+  .hero-logo-card img { width:108px; height:108px; }
+  .hero-shape-back { width:158px; height:158px; border-radius:20px; }
+  .hero-badge { min-height:30px; font-size:9px; gap:5px; padding:0 8px 0 5px; }
+  .hero-badge-icon { width:21px; height:21px; flex-basis:21px; }
+  .hero-badge-icon svg { width:11px; height:11px; }
+  .hero-badge-1 { top:-12px; left:-27px; }
+  .hero-badge-2 { top:24px; right:-29px; }
+  .hero-badge-3 { top:88px; right:-28px; }
+  .hero-badge-4 { bottom:-12px; right:-16px; }
+  .hero-badge-5 { bottom:27px; left:-29px; }
+
+  .services-inner { padding-top:30px; padding-bottom:30px; }
+  .services h2,.portfolio h2,.section-heading h2,.faq-title h2 { font-size:24px; margin-bottom:18px; }
+  .service-list { gap:8px; }
+  .service-card { gap:10px; padding:12px; border-radius:14px; }
+  .service-card .number { flex-basis:20px; }
+  .service-card h3 { font-size:16px; }
+  .service-card p:not(.eyebrow) { font-size:13px; line-height:1.4; margin-top:3px; }
+
+  .start-inner { padding-top:30px; padding-bottom:30px; }
+  .start-card { padding:14px; gap:12px; margin-top:4px; }
+  .mobile-form-heading { font-size:19px; }
+  .start-card form { gap:11px; }
+  .field { font-size:13px; gap:5px; }
+  .field input,.field textarea { min-height:44px; padding:10px 11px; font-size:14px; }
+  .start-card .btn { min-height:44px; font-size:14px; }
+
+  .portfolio-inner { padding-top:30px; padding-bottom:30px; }
+  .portfolio h2 { margin:5px 0 16px; }
+  .device-stage { gap:10px; }
+  .phone { width:156px; height:312px; max-width:100%; padding:6px; border-radius:28px; }
+  .phone-screen { border-radius:22px; }
+  .phone-island { top:5px; width:54px; height:14px; border-radius:9px; }
+  .phone .work-slider { width:100%; height:100%; }
+  .phone .work-slide { flex:0 0 100%; width:100%; height:100%; }
+  .phone .work-slide img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; background:#111318; }
+
+  .team { padding:30px 0 0; }
+  .section-heading h2 { margin:5px 0 16px; }
+  .mobile-marquee { padding-bottom:30px; }
+  .marquee-group > .team-card { flex-basis:140px; width:140px; margin-right:10px; }
+  .team-card { gap:8px; padding:8px 8px 10px; border-radius:14px; }
+  .team-card h3 { font-size:15px; }
+  .team-card p { font-size:13px; }
+  .reviews { padding:30px 0 0; }
+  .review-disclaimer { margin:-8px auto 16px; font-size:12px; }
+  .review-card { width:240px; flex-basis:240px; margin-right:10px; padding:16px; gap:12px; border-radius:15px; }
+  .review-card p { font-size:14px; line-height:1.45; }
+  .review-card footer { font-size:13px; }
+
+  .faq-inner { padding-top:30px; padding-bottom:26px; }
+  .faq-title h2 { margin:5px 0 12px; }
+  .faq-items details { padding:10px 12px; margin-bottom:7px; border-radius:10px; }
+  .faq-items summary { min-height:44px; font-size:15px; }
+  .faq-items summary::after { font-size:20px; }
+  .faq-items details > p { font-size:13px; line-height:1.45; padding-top:6px; }
+
+  .site-footer h2 { font-size:23px; }
+  .footer-inner { padding-top:26px; padding-bottom:26px; gap:12px; }
+  .socials { gap:8px; margin-top:12px; }
+  .social { width:40px; height:40px; }
+  .eyebrow { font-size:11px; }
+  .btn { min-height:44px; padding:0 18px; font-size:14px; }
+  .device-caption { font-size:12px; gap:8px; }
+  .slideshow-toggle { padding:6px 12px; font-size:12px; }
+}
