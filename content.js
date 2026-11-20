@@ -19,9 +19,9 @@ window.DOPE_CONTENT = {
   ],
   hero: {
     eyebrow: 'CREATIVE • PERFORMANCE • GROWTH',
-    title: 'Starting your',
-    highlight: 'business?',
-    description: 'Then you need the best team to market your business. One team that can do everything, like DOPE MEDIA.',
+    title: 'Building Brands with',
+    highlight: 'Creative Strategy',
+    description: 'We help businesses grow through powerful branding, content, and performance-driven digital marketing.',
     logo: 'assets/logo.png',
     button: 'Get started',
     secondaryButton: 'See our work',
