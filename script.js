@@ -32,6 +32,8 @@ function reviewCard(review) {
 }
 const worksDesktop = (C.portfolio.works || []).map((item) => workSlide(item, true)).join('');
 const worksMobile = (C.portfolio.mobileWorks || C.portfolio.works || []).map(workSlide).join('');
+const heroCardsSource = (C.portfolio.works || []).filter((item) => item.image);
+const heroCards = [...heroCardsSource, ...heroCardsSource].map((item, i) => `<article class="hero-slide-card" aria-label="${safe(item.title)}"><img src="${allowedUrl(item.image)}" alt="${safe(item.title)}" loading="${i < 5 ? 'eager' : 'lazy'}" decoding="async"><span>${safe(item.title)}</span></article>`).join('');
 const team = C.team.people.map(teamCard).join('');
 const reviews = C.reviews.items.map(reviewCard).join('');
 const nav = C.navigation.map(({ label, anchor }) => `<a href="#${safe(anchor)}">${safe(label)}</a>`).join('');
@@ -56,10 +58,24 @@ document.getElementById('site').innerHTML = `
   </div><nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>${nav}<a class="btn" href="#start">${safe(C.hero.button)}</a></nav></header>
 
   <main>
-    <section class="hero" id="home"><div class="wrap hero-inner">
-      <div class="hero-copy"><p class="hero-kicker">${safe(C.hero.eyebrow)}</p><h1>${safe(C.hero.title)} <span class="hero-highlight">${safe(C.hero.highlight)}</span></h1><p>${safe(C.hero.description)}</p><div class="hero-actions"><a class="btn btn-white hero-btn" href="#start">${safe(C.hero.button)} ${icon.arrow}</a><a class="btn btn-ghost hero-btn-secondary" href="#work">${icon.play}<span>${safe(C.hero.secondaryButton)}</span></a></div></div>
-      <div class="hero-visual"><div class="hero-shape hero-shape-back"></div><div class="hero-logo-card">${heroLabels}<img src="${allowedUrl(C.hero.logo)}" width="300" height="300" alt="Dope Media logo"></div></div>
-    </div></section>
+    <section class="hero hero-rebuilt" id="home">
+      <div class="hero-clouds" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">${safe(C.hero.eyebrow)}</p>
+          <h1>${safe(C.hero.title)} <span class="hero-highlight">${safe(C.hero.highlight)}</span></h1>
+          <p>${safe(C.hero.description)}</p>
+          <div class="hero-actions">
+            <a class="btn hero-btn" href="#start">${safe(C.hero.button)} ${icon.arrow}</a>
+            <a class="btn btn-ghost hero-btn-secondary" href="#work"><span>${safe(C.hero.secondaryButton)}</span> ${icon.play}</a>
+          </div>
+        </div>
+        <div class="hero-showcase" aria-label="Selected Dope Media creative work">
+          <div class="hero-showcase-track">${heroCards}</div>
+        </div>
+        <div class="hero-proof"><span>Creative that gets noticed</span><span class="hero-stars" aria-label="Five star creative quality">★★★★★</span><span>Ads · Design · Websites · Growth</span></div>
+      </div>
+    </section>
 
     <section class="services" id="services"><div class="wrap services-inner"><h2>${safe(C.servicesHeading)}</h2><div class="service-list">${C.services.map((item, i) => `<article class="service-card"><span class="eyebrow number">${String(i+1).padStart(2,'0')}</span><h3>${safe(item.name)}</h3><p>${safe(item.description)}</p></article>`).join('')}</div></div></section>
 
